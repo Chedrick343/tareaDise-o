@@ -1,0 +1,91 @@
+/* Fondo tipo papel */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Patrick Hand', cursive;
+  background-color: #fdfcf7;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fdfcf7 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fondo animado con X y O */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.symbol {
+  position: absolute;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(150, 150, 150, 0.2);
+  animation: fadeInOut 6s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 0.6; transform: scale(1); }
+}
+
+/* Contenedor principal */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px dashed #d6d3d1;
+  border-radius: 16px;
+  padding: 40px 60px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.title {
+  font-size: 70px;
+  color: #444;
+  text-shadow: 2px 2px #dcdcdc;
+  margin-bottom: 20px;
+  animation: titleFade 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleFade {
+  from { transform: scale(1); color: #444; }
+  to { transform: scale(1.05); color: #000; }
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Botón */
+.play-button {
+  font-size: 20px;
+  background-color: #4c8bf5;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: #3a6fe2;
+  transform: scale(1.05);
+}
