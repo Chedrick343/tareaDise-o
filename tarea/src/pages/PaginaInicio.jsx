@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/PaginaInicio.module.css";
+import { Navigate } from "react-router-dom";
 
 export default function PaginaInicio() {
   const [symbols, setSymbols] = useState([]);
@@ -15,6 +16,7 @@ export default function PaginaInicio() {
     }));
     setSymbols(generated);
   }, []);
+
 
   return (
     <div className="container">
@@ -34,10 +36,10 @@ export default function PaginaInicio() {
       {/* Contenido principal */}
       <div className="content">
         <h1 className="title">Gatooo 🐾</h1>
-        <p className="subtitle">¡Prepárate para jugar el clásico juego del Gato!</p>
+        <p className="subtitle">El clásico...</p>
         <button
           className="play-button"
-          onClick={() => alert("Comenzar el juego 🎮")}
+          onClick={() => (window.location.href = "/juego")}
         >
           Jugar
         </button>
